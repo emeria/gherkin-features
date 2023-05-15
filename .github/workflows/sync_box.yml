@@ -15,3 +15,4 @@ jobs:
         password: 3JAUD3rd7vbWoA18vVhw41Ns4GmvsHUS
         customHeaders: '{"Content-Type": "application/json"}'
         data: '{"folder_id": "207599966389"}'
+        responseFile: './features/'
