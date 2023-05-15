@@ -1,0 +1,17 @@
+on: 
+  schedule:
+  # * is a special character in YAML so you have to quote this string
+    - cron:  '30 5 * * *'
+jobs:
+  deployment:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Deploy Stage
+      uses: fjogeleit/http-request-action@v1
+      with:
+        url: 'https://api.box.com/2.0/folders/:folder_id/items'
+        method: 'GET'
+        username: rpk17gne6g8gkgvfskvqw8i7lvrit6jp
+        password: 3JAUD3rd7vbWoA18vVhw41Ns4GmvsHUS
+        customHeaders: '{"Content-Type": "application/json"}'
+        data: '{"folder_id": "207599966389"}'
